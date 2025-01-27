@@ -32,7 +32,7 @@ export async function createFrontendProject(projectName, framework, language) {
           spinner,
         });
         break;
-      case "React-Native":
+      case "react-native":
         await createReactNativeProject({
           framework,
           language,
