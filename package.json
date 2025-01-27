@@ -1,0 +1,40 @@
+{
+  "name": "samease",
+  "version": "1.0.0",
+  "description": "SamEase is a versatile command-line tool designed to simplify and accelerate project setup. It empowers developers to quickly scaffold projects, select from various templates, and integrate with different tech stack, allowing for a smooth and efficient project kickstart.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "keywords": [
+    "samease",
+    "fullstack",
+    "react",
+    "node",
+    "express",
+    "react-native",
+    "javascript",
+    "cli"
+  ],
+  "author": "sam coder",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "figlet": "^1.8.0",
+    "fs-extra": "^11.3.0",
+    "gradient-string": "^3.0.0",
+    "inquirer": "^12.3.2",
+    "is-online": "^11.0.0",
+    "ora": "^8.1.1",
+    "semver": "^7.6.3",
+    "shelljs": "^0.8.5"
+  },
+  "bin": {
+    "samease-cli": "./index.js"
+  }
+}
