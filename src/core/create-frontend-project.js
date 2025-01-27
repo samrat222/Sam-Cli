@@ -2,6 +2,7 @@ import { addGitignore } from "./utils/file-manager.js";
 import path from "path";
 import ora from "ora";
 import { createHtmlCssJsProject } from "./create-projects-handlers/frontend/html x css x js/createHtmlCssJs.js";
+import { createReactNativeProject } from "./create-projects-handlers/frontend/react native/createReactNative.js";
 import { errorHandler } from "./utils/errorHandler.js";
 
 /**
@@ -25,6 +26,14 @@ export async function createFrontendProject(projectName, framework, language) {
         break;
       case "html-x-css-x-javascript":
         await createHtmlCssJsProject({
+          framework,
+          language,
+          destinationPath,
+          spinner,
+        });
+        break;
+      case "React-Native":
+        await createReactNativeProject({
           framework,
           language,
           destinationPath,
