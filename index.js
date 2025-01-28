@@ -12,7 +12,10 @@ import {
   promptDependenciesInstall,
 } from "./src/core/prompts.js";
 import { createFrontendProject } from "./src/core/create-frontend-project.js";
-import { validateProjectName } from "./src/core/utils/helper.js";
+import {
+  checkForUpdate,
+  validateProjectName,
+} from "./src/core/utils/helper.js";
 // import { sendQueuedStats } from "./src/core/stat.js";
 
 const toolName = "SamEase";
@@ -41,7 +44,7 @@ async function startProject() {
   )} CLI Tool.`;
 
   // check for update
-  //   await checkForUpdate();
+  await checkForUpdate();
 
   // render cli title
   renderTitle();

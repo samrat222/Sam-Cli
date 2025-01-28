@@ -35,9 +35,9 @@ export function validateProjectName(projectName) {
 /**
  * check user is connected to internet
  */
-// export async function isConnectedToInternet() {
-//   return await isOnline();
-// }
+export async function isConnectedToInternet() {
+  return await isOnline();
+}
 
 /**
  * This function is used to process the installation of dependencies for a given project.
@@ -57,17 +57,17 @@ export async function processDependenciesInstall(framework, destinationPath) {
   if (await isConnectedToInternet()) {
     shell.cd(`${destinationPath}`);
     switch (framework) {
-      // case "expressjs":
-      //   shell.exec(`npm install`);
-      //   shell.exec(`npm run format:fix`);
-      //   shell.cd("-");
-      //   break;
+      case "expressjs":
+        shell.exec(`npm install`);
+        shell.exec(`npm run format:fix`);
+        shell.cd("-");
+        break;
 
-      // case "nestjs":
-      //   shell.exec(`npm install`);
-      //   shell.exec(`npm run format`);
-      //   shell.cd("-");
-      //   break;
+      case "nestjs":
+        shell.exec(`npm install`);
+        shell.exec(`npm run format`);
+        shell.cd("-");
+        break;
 
       default:
         break;
@@ -87,27 +87,25 @@ export async function processDependenciesInstall(framework, destinationPath) {
  * @async
  * @returns {void}
  */
-// export async function checkForUpdate() {
-//   try {
-//     const response = await axios.get(
-//       "https://registry.npmjs.org/startease-cli"
-//     );
-//     const latestVersion = response.data["dist-tags"].latest;
-//     const currentVersion = packageJson.version;
+export async function checkForUpdate() {
+  try {
+    const response = await axios.get("https://registry.npmjs.org/samease");
+    const latestVersion = response.data["dist-tags"].latest;
+    const currentVersion = packageJson.version;
 
-//     if (semver.gt(latestVersion, currentVersion)) {
-//       console.log(
-//         chalk.yellow(
-//           `🚀 Exciting news! StartEase v${latestVersion} is now available!`
-//         )
-//       );
-//       console.log(chalk.cyan(`Upgrade now: npm install -g startease-cli`));
-//       console.log(
-//         chalk.blue(`Learn more: https://github.com/JC-Coder/startease`)
-//       );
-//     }
-//   } catch (error) {
-//     // don't do anything
-//     // the catch is added to prevent obstructing user workflow
-//   }
-// }
+    if (semver.gt(latestVersion, currentVersion)) {
+      console.log(
+        chalk.yellow(
+          `🚀 Exciting news! SamEase v${latestVersion} is now available!`
+        )
+      );
+      console.log(chalk.cyan(`Upgrade now: npm install -g samease-cli`));
+      // console.log(
+      //   chalk.blue(`Learn more: https://github.com/JC-Coder/startease`)
+      // );
+    }
+  } catch (error) {
+    // don't do anything
+    // the catch is added to prevent obstructing user workflow
+  }
+}
