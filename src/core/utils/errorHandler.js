@@ -9,9 +9,10 @@ export class ErrorHandler {
   handleError(error) {
     if (ENVIRONMENT.ENV === "development") {
       this.handleDevError(error);
-    } else {
-      this.handleProdError();
     }
+    // else {
+    //   this.handleProdError();
+    // }
   }
 
   handleDevError(error) {
